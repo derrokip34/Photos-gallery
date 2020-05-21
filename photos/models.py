@@ -27,6 +27,17 @@ class Image(models.Model):
     @classmethod
     def get_all_images(cls):
         images = cls.objects.all()
+        return images
+
+    @classmethod
+    def search_by_location(cls,search_term):
+        image = Image.objects.filter(location__location=search_term).all()
+        return image
+
+    @classmethod
+    def search_by_category(cls,search_term):
+        image = Image.objects.filter(category__category=search_term).all()
+        return image
 
 class Location(models.Model):
     location = models.CharField(max_length=30)
