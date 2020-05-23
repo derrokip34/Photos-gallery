@@ -1,10 +1,16 @@
 {% extends 'all_photos/base.html' %}
 {% block content %}
-
+{{block.super}}
 <div class="container-fluid">
     <hr>
+    {% if images %}
+    <h1>Found {{images|length}} search result(s) for {{message}}</h1>
+    {% else %}
+    <h1>No images for search result(s) {{message}}</h1>
+    {% endif %}
+    {%if images %}
     <div class="row">
-{% for img in images %}
+    {% for img in images %}
             <div class="col-lg-4 col-lg-4 col-lg-4 padding-0 hover ">
                 <a role="button" data-toggle="modal" data-target="#exampleModalLong{{img.id}}">
                     <img src="{{img.image.url}}" class="img img-responsive img-thumbnail" style="height: 350px; width:450px; margin-bottom: 10px;" data-toggle="modal" data-target="#{{image.id}}">
@@ -45,9 +51,10 @@
                 </div>
             </div>
         </div>
-        {% endfor %}
-{% endfor %}
+    {% endfor %}
+    {% endfor %}
 </div>
+{% endif %}
 </div>
 
 {% endblock %}
