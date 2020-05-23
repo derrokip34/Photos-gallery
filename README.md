@@ -1,10 +1,10 @@
-# BLOGS
+# PHOTOS GALLERY
 
 ## AUTHOR
 - [Derrick Kiprop](https://github.com/derrokip34)
 
 ## PROJECT DESCRIPTION
-This is an app where one can sign up and post blogs from different categories. A user can also update or delete their posts and comment on the posts
+This is a django app where a user can view images, search for images based on categories, see images from different location and copy links to the images
 
 ## SETUP AND USAGE INSTRUCTIONS
 ### Prerequisites
