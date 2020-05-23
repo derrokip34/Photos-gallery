@@ -30,9 +30,9 @@ class Image(models.Model):
         return images
 
     @classmethod
-    def search_by_location(cls,search_term):
-        image = Image.objects.filter(location__location=search_term).all()
-        return image
+    def filter_by_location(cls,search_term):
+        images = Image.objects.filter(image_location_id=search_term).all()
+        return images
 
     @classmethod
     def search_by_category(cls,search_term):
@@ -60,5 +60,5 @@ class Category(models.Model):
     def save_category(self):
         self.save()
 
-    def.delete_category(self):
+    def delete_category(self):
         self.delete()

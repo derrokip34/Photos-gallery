@@ -4,10 +4,10 @@ from django.http import Http404
 
 # Create your views here.
 def welcome(request):
-    return render(request,'index.html')
+    locations = Location.objects.all()
+    return render(request,'index.html',{'locations':locations})
 
 def all_photos(request):
-
     images = Image.get_all_images()
     return render(request, 'all_photos/photos.html',{'images':images})
 
@@ -20,3 +20,9 @@ def search_images_by_category(request):
     else:
         message="No category searched"
         return render(request,'all_photos/search.html',{"message":message})
+
+def filter_by_locations(request,location):
+    locations = Location.objects.all()
+    images = Image.filter_by_location(location)
+
+    return render(request,'all_photos/location.html',{'images':images,'locations':locations})

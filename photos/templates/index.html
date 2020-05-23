@@ -1,15 +1,34 @@
 {% extends 'all_photos/base.html' %}
 
 {% block content %}
-<div class="jumbotron text-center blue-grey lighten-5">
-    <h2 class="card-title h2">PHOTOS GALLERY</h2>
-    <div class="row d-flex justify-content-center">
-      <div class="col-xl-7 pb-2">
-        <p class="card-text">Search for photos from different locations and different categories</p>
+<hr>
+<div class="container-fluid">
+
+  <div class="jumbotron text-center blue-grey lighten-5">
+      <h2 class="card-title h2">PHOTOS GALLERY</h2>
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 pb-2">
+          <p class="card-text">Find for photos from different locations and different categories</p>
+        </div>
+      </div>
+      <hr class="my-4 pb-2">
+      <a href="{% url 'all_photos' %}" class="btn blue-gradient btn-rounded">VIEW IMAGES   <i class="fas fa-images"></i></a>
+  </div>
+  <hr>
+  <div class="row">
+    {% for location in locations %}
+    <div class="col-md-3">
+      <div class="card-mb-4">
+        <div class="card-header">{{location.location}}</div>
+        <div class="card-body">
+          <p class="card-text">View images from {{location.location}}</p>
+          <a href="location/{{location.id}}"><p class="card-text">Click here  <i class="fas fa-angle-double-right"></i></p></a>
+        </div>
+        <div class="card-footer"></div>
       </div>
     </div>
-    <hr class="my-4 pb-2">
-    <a href="{% url 'all_photos' %}" class="btn blue-gradient btn-rounded">VIEW IMAGES   <i class="fas fa-images"></i></a>
+    {% endfor %}
   </div>
 
+</div>
 {% endblock %}

@@ -1,11 +1,10 @@
 {% extends 'all_photos/base.html' %}
-
 {% block content %}
-{{block.super}}
 
 <div class="container-fluid">
     <hr>
     <div class="row">
+{% if images %}
 {% for img in images %}
             <div class="col-lg-4 col-lg-4 col-lg-4 padding-0 hover ">
                 <a role="button" data-toggle="modal" data-target="#exampleModalLong{{img.id}}">
@@ -28,8 +27,8 @@
                             <footer class="blockquote-footer">{{img.image_location}}</footer>
                         </blockquote>
                         <img class="text-center" src="{{img.image.url}}" alt=""  style="width: 100%; height: 450px;">
-                        <hr>
                         <div class="copy-url">
+                            <hr>
                             <label>Image link</label>
                             <input type="text" value="http://127.0.0.1:8000{{img.image.url}}" style="width: 100%;" id="copy-link"><br><br>
                             <button class="btn aqua-gradient btn-sm" onclick="copyToClipboard()">Copy link  <i class="far fa-clone"></i></button>
@@ -49,6 +48,9 @@
         </div>
         {% endfor %}
 {% endfor %}
+{% else %}
+<h2>No images from this location</h2>
+{% endif %}
 </div>
 </div>
 
