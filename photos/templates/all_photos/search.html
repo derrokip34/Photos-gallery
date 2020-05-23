@@ -21,10 +21,16 @@
                         </a>
                     </div>
                     <div class="modal-body">
+                        <blockquote class="blockquote">
+                            <p>{{img.image_description}}</p>
+                            <footer class="blockquote-footer">{{img.image_location}}</footer>
+                        </blockquote>
                         <img class="text-center" src="{{img.image.url}}" alt=""  style="width: 100%; height: 450px;">
                         <div class="copy-url">
-                            <input type="text" value="http://127.0.0.1:8000{{img.image.url}}" style="width: 100%;" id="copy-link">
-                            <button onclick="copyToClipboard()"><i class="far fa-clone"></i></button>
+                            <hr>
+                            <label>Image link</label>
+                            <input type="text" value="http://127.0.0.1:8000{{img.image.url}}" style="width: 100%;" id="copy-link"><br><br>
+                            <button class="btn aqua-gradient btn-sm" onclick="copyToClipboard()">Copy link  <i class="far fa-clone"></i></button>
                             <script>
                                 function copyToClipboard() {
                                     var copylink = document.getElementById("copy-link")
