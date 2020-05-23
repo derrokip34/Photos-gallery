@@ -50,7 +50,7 @@ python3.6 manage.py runserver
 
 #### Open 'http://127.0.0.1:8000/' in your browser and enjoy your app
 
-## [BLOG Live site](https://gallery-3.herokuapp.com/)
+## [Photos-gallery Live site](https://gallery-3.herokuapp.com/)
 
 ## BDD
 ### Input required
