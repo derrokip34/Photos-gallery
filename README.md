@@ -15,7 +15,7 @@ This is an app where one can sign up and post blogs from different categories. A
 - Text editor software
 
 #### Clone or download the zip file of this repository
-- Clone by typing in the following command `git clone https://github.com/derrokip34/Blog.git`
+- Clone by typing in the following command `git clone https://github.com/derrokip34/Photos-gallery.git`
 - If you've downloaded the zip extract it in your preferred destination
 
 #### Navigate into the project directory
