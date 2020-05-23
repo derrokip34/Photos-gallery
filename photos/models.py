@@ -3,7 +3,7 @@ import datetime as dt
 
 # Create your models here.
 class Image(models.Model):
-    image = models.ImageField(upload_to='images/',default='DEFAULT VALUE')
+    image = models.ImageField(upload_to='images/')
     image_name = models.CharField(max_length=60)
     image_description = models.CharField(max_length=200,null=True)
     date_posted = models.DateTimeField(auto_now_add=True)
@@ -36,7 +36,7 @@ class Image(models.Model):
 
     @classmethod
     def search_by_category(cls,search_term):
-        image = Image.objects.filter(category__category=search_term).all()
+        image = Image.objects.filter(image_category__category__icontains=search_term).all()
         return image
 
 class Location(models.Model):

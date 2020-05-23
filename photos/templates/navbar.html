@@ -8,7 +8,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
-    <a class="navbar-brand" href="#"><i class="far fa-images"></i>  PHOTOS GALLERY</a>
+    <a class="navbar-brand" href="{% url 'welcome' %}"><i class="far fa-images"></i>  PHOTOS GALLERY</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
       aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -18,10 +18,10 @@
             <li class="nav-item">
             </li>
         </ul>
-      <form class="form-inline">
+      <form class="form-inline" role="search" action="{% url 'search_images' %}">
         <div class="md-form my-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <a><i class="fas fa-search"></i></a>
+          <input class="form-control mr-sm-2" type="text" placeholder="Search category" aria-label="Search" name="image">
+          <button type="submit"><i class="fas fa-search"></i></button>
         </div>
       </form>
     </div>
