@@ -81,4 +81,4 @@ There are no known bugs at the moment
 In case of any bugs contact me at derrokip34@gmail.com
 
 ## LICENSE & COPYRIGHT INFORMATION
-[MIT License](https://github.com/derrokip34/Photos-gallery/blob/aster/license.md)
+[MIT License](https://github.com/derrokip34/Photos-gallery/blob/master/license.md)
